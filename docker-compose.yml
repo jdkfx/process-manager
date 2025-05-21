@@ -1,0 +1,7 @@
+services:
+  process-manager:
+    build: .
+    container_name: process-manager
+    tty: true
+    volumes:
+      - .:/app
