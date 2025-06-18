@@ -3,6 +3,7 @@
 
 require_once __DIR__ . '/../tasks/TaskInterface.php';
 require_once __DIR__ . '/../tasks/HelloTask.php';
+require_once __DIR__ . '/../tasks/SlowTask.php';
 require_once __DIR__ . '/../src/ProcessManager.php';
 
 use App\ProcessManager;
