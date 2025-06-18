@@ -3,12 +3,16 @@
 
 require_once __DIR__ . '/../tasks/TaskInterface.php';
 require_once __DIR__ . '/../tasks/HelloTask.php';
+require_once __DIR__ . '/../src/ProcessManager.php';
+
+use App\ProcessManager;
 
 $taskClasses = require __DIR__ . '/../config/tasks.php';
 
+$taskInstances = [];
 foreach ($taskClasses as $taskClass) {
-    $task = new $taskClass();
-    echo "=== Running: {$task->getName()} ===\n";
-    $task->execute();
-    echo "=== Finished: {$task->getName()} ===\n\n";
+    $taskInstances[] = new $taskClass();
 }
+
+$manager = new ProcessManager(3);
+$manager->run($taskInstances);
