@@ -2,13 +2,15 @@
 
 namespace Tasks;
 
+use Lib\ConsoleHelper;
+
 class SlowTask implements TaskInterface {
     public function getName(): string {
         return 'SlowTask';
     }
 
     public function execute(): void {
-        echo "[{$this->getName()}] ...zzZ\n";
-        sleep(20);
+        ConsoleHelper::colorEcho("[{$this->getName()}] ...zzZ", 'cyan');
+        sleep(50);
     }
 }
