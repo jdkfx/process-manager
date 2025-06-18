@@ -2,8 +2,6 @@
 
 namespace App;
 
-use Tasks\TaskInterface;
-
 class ProcessManager
 {
     public int $maxProcesses;
